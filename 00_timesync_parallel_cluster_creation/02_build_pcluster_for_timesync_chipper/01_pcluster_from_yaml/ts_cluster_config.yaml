@@ -2,7 +2,7 @@ Region: us-west-2
 CustomS3Bucket: dev-nlcd-parallelcluster-testbucket
 Image:
   Os: alinux2
-  CustomAmi: ami-05101273cc13c8fd3
+  CustomAmi: ami-0406226832393a631
 HeadNode:
   InstanceType: t3.large
   Networking:
@@ -37,7 +37,7 @@ Scheduling:
       SecurityGroups:
         - sg-002f447f31043cbed
     Image:
-      CustomAmi: ami-05101273cc13c8fd3
+      CustomAmi: ami-0406226832393a631
     Iam:
       AdditionalIamPolicies:
         - Policy: arn:aws:iam::081515586180:policy/developer-policy

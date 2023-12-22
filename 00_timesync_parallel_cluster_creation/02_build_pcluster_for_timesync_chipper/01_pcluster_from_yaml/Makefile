@@ -11,7 +11,7 @@ ungen:
 
 
 list:
-	pcluster list-clusters
+	pcluster list-clusters | egrep 'clusterN|clusterS'
 
 
 node2:
