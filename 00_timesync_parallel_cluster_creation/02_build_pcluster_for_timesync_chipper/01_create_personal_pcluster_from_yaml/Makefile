@@ -3,7 +3,7 @@ cat:
 
 
 thecluster:
-	pcluster create-cluster --cluster-name tsv2-pcluster --cluster-configuration ts_cluster_config.yaml
+	pcluster create-cluster --cluster-name butzer-pcluster --cluster-configuration butzer_ts_cluster_config.yaml
 
 
 ungen:

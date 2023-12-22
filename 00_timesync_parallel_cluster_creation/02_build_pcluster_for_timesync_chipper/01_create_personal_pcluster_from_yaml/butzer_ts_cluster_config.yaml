@@ -1,0 +1,56 @@
+Region: us-west-2
+CustomS3Bucket: dev-nlcd-parallelcluster-testbucket
+Image:
+  Os: alinux2
+  CustomAmi: ami-0406226832393a631
+HeadNode:
+  InstanceType: t3.large
+  Networking:
+    SubnetId: subnet-06cf6942c47c4958d
+    SecurityGroups:
+      - sg-002f447f31043cbed
+  Ssh:
+    KeyName: butzer@IGSKMNCNLT01529
+  Iam:
+    AdditionalIamPolicies:
+      - Policy: arn:aws:iam::081515586180:policy/developer-policy
+      - Policy: arn:aws:iam::081515586180:policy/nlcd-developer-s3-access-policy
+    S3Access:
+      - BucketName: dev-nlcd-developer
+Scheduling:
+  Scheduler: slurm
+  SlurmSettings:
+    Dns:
+      DisableManagedDns: true
+      UseEc2Hostnames: true
+  SlurmQueues:
+  - Name: eco
+    ComputeResources:
+    - Name: nodes 
+      Instances:
+      - InstanceType: t3a.2xlarge
+      MinCount: 0
+      MaxCount: 24
+    Networking:
+      SubnetIds:
+      - subnet-06cf6942c47c4958d
+      SecurityGroups:
+        - sg-002f447f31043cbed
+    Image:
+      CustomAmi: ami-0406226832393a631
+    Iam:
+      AdditionalIamPolicies:
+        - Policy: arn:aws:iam::081515586180:policy/developer-policy
+        - Policy: arn:aws:iam::081515586180:policy/nlcd-developer-s3-access-policy
+      S3Access:
+        - BucketName: dev-nlcd-developer
+Iam:
+  PermissionsBoundary: arn:aws:iam::081515586180:policy/csr-Developer-Permissions-Boundary
+SharedStorage:
+  - MountDir: /efs
+    Name: s3-data-efs
+    StorageType: Efs
+    EfsSettings:
+      Encrypted: false
+      DeletionPolicy: Delete
+
