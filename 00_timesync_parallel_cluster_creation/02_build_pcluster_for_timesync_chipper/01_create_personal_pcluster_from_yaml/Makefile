@@ -10,6 +10,14 @@ ungen:
 	pcluster delete-cluster --cluster-name tsv2-pcluster
 
 
+upchuck:
+	pcluster create-cluster --cluster-name crobison-pcluster --cluster-configuration crobison_ts_cluster_config.yaml
+
+
+unchuck:
+	pcluster delete-cluster --cluster-name crobison-pcluster
+
+
 list:
 	pcluster list-clusters | egrep 'clusterN|clusterS'
 
