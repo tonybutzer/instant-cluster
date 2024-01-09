@@ -3,7 +3,7 @@ Region: us-west-2
 CustomS3Bucket: dev-nlcd-parallelcluster-testbucket
 Build:
   InstanceType: t3a.2xlarge
-  ParentImage: ami-0c63ccebff747fe49
+  ParentImage: ami-066f7c8fde9b32c2c
   SubnetId: subnet-06cf6942c47c4958d
   SecurityGroupIds:
     - sg-002f447f31043cbed
