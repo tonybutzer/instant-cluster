@@ -11,11 +11,18 @@ ungen:
 
 
 upchuck:
-	pcluster create-cluster --cluster-name crobison-pcluster --cluster-configuration crobison_ts_cluster_config.yaml
+	pcluster create-cluster --cluster-name crobison-pcluster-v2 --cluster-configuration crobison_ts_cluster_config.yaml
 
 
 unchuck:
 	pcluster delete-cluster --cluster-name crobison-pcluster
+
+uppdan:
+	pcluster create-cluster --cluster-name pdanielson-pcluster --cluster-configuration pdanielson_cluster_config.yaml
+
+
+unpdan:
+	pcluster delete-cluster --cluster-name pdanielson-pcluster
 
 
 list:

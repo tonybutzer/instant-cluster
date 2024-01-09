@@ -10,7 +10,7 @@ HeadNode:
     SecurityGroups:
       - sg-002f447f31043cbed
   Ssh:
-    KeyName: crobison@IGSKMNCNLT01790
+    KeyName: danielson-keypair2
   Iam:
     AdditionalIamPolicies:
       - Policy: arn:aws:iam::081515586180:policy/developer-policy
