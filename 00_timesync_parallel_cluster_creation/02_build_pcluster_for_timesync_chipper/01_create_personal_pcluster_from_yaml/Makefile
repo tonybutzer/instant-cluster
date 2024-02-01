@@ -2,12 +2,12 @@ cat:
 	cat Makefile
 
 
-thecluster:
-	pcluster create-cluster --cluster-name butzer-pcluster --cluster-configuration butzer_ts_cluster_config.yaml
+upbutzer:
+	pcluster create-cluster --cluster-name butzer-pcluster-v2 --cluster-configuration butzer_ts_cluster_config.yaml
 
 
-ungen:
-	pcluster delete-cluster --cluster-name tsv2-pcluster
+downbutzer:
+	pcluster delete-cluster --cluster-name butzer-pcluster
 
 
 upchuck:
@@ -31,7 +31,7 @@ list:
 
 node2:
 	#nvm install --lts
-	echo nvm install 17
+	echo nvm install 16
 	node --version
 
 node:
