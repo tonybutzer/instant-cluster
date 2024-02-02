@@ -2,7 +2,7 @@ Region: us-west-2
 CustomS3Bucket: dev-nlcd-parallelcluster-testbucket
 Image:
   Os: alinux2
-  CustomAmi: ami-0406226832393a631
+  CustomAmi: ami-0872138b35b419480
 HeadNode:
   InstanceType: t3.large
   Networking:
@@ -28,36 +28,36 @@ Scheduling:
     ComputeResources:
     - Name: nodes 
       Instances:
-      - InstanceType: t3.2xlarge
+      - InstanceType: m6i.4xlarge
       MinCount: 0
-      MaxCount: 24
+      MaxCount: 16
     Networking:
       SubnetIds:
       - subnet-06cf6942c47c4958d
       SecurityGroups:
         - sg-002f447f31043cbed
     Image:
-      CustomAmi: ami-0406226832393a631
+      CustomAmi: ami-0872138b35b419480
     Iam:
       AdditionalIamPolicies:
         - Policy: arn:aws:iam::081515586180:policy/developer-policy
         - Policy: arn:aws:iam::081515586180:policy/nlcd-developer-s3-access-policy
       S3Access:
         - BucketName: dev-nlcd-developer
-  - Name: old
+  - Name: big
     ComputeResources:
-    - Name: old 
+    - Name: big 
       Instances:
-      - InstanceType: t3a.2xlarge
+      - InstanceType: m6i.8xlarge
       MinCount: 0
-      MaxCount: 24
+      MaxCount: 8
     Networking:
       SubnetIds:
       - subnet-06cf6942c47c4958d
       SecurityGroups:
         - sg-002f447f31043cbed
     Image:
-      CustomAmi: ami-0406226832393a631
+      CustomAmi: ami-0872138b35b419480
     Iam:
       AdditionalIamPolicies:
         - Policy: arn:aws:iam::081515586180:policy/developer-policy

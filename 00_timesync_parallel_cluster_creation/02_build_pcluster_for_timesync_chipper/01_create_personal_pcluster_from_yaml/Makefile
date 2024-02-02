@@ -3,11 +3,11 @@ cat:
 
 
 upbutzer:
-	pcluster create-cluster --cluster-name butzer-pcluster-v2 --cluster-configuration butzer_ts_cluster_config.yaml
+	pcluster create-cluster --cluster-name butzer-pcluster-v4 --cluster-configuration butzer_ts_cluster_config.yaml
 
 
 downbutzer:
-	pcluster delete-cluster --cluster-name butzer-pcluster
+	pcluster delete-cluster --cluster-name butzer-pcluster-v2
 
 
 upchuck:
